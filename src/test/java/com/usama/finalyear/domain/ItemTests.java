@@ -54,4 +54,17 @@ public class ItemTests {
     assertEquals("generalitems",item.getCategory().getCategoryName());
     }
 
+    @Test
+    public void getItemId(){
+        Item item = new Item();
+        assertEquals(0,item.getId());
+
+    }
+    @Test
+    public void setItemId(){
+        Item item = new Item();
+        item.setId(10);
+        assertEquals(10,item.getId());
+    }
+
 }

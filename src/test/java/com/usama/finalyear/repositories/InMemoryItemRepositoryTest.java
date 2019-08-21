@@ -47,7 +47,7 @@ public class InMemoryItemRepositoryTest {
     }
     @Test
     @Ignore
-    public void createItemAndSetItsIdAndGet(){
+    public void whenItemHaveAnIdSaveMethodshouldNotAssignNewId(){
         Item item = new Item();
         InMemoryitemRepository itemrepository = new InMemoryitemRepository();
         item.setId(10);

@@ -46,13 +46,12 @@ public class InMemoryItemRepositoryTest {
         assertEquals(2,savedItem2.getId());
     }
     @Test
-    @Ignore
     public void whenItemHaveAnIdSaveMethodshouldNotAssignNewId(){
-        Item item = new Item();
+        Item item = new Item("fair and lovly");
         InMemoryitemRepository itemrepository = new InMemoryitemRepository();
-        item.setId(10);
+        item.setId(100);
         Item savedItem = itemrepository.save(item);
-        assertEquals(10,savedItem.getId());
+        assertEquals(100,savedItem.getId());
     }
 
     @Test

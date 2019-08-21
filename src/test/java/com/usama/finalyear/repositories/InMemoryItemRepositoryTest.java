@@ -54,5 +54,15 @@ public class InMemoryItemRepositoryTest {
         Item savedItem = itemrepository.save(item);
         assertEquals(10,savedItem.getId());
     }
+
+    @Test
+    @Ignore
+    public void sameItemShouldNotSaveTwice(){
+        Item item = new Item();
+        InMemoryitemRepository itemRepository = new InMemoryitemRepository();
+        itemRepository.save(item);
+        itemRepository.save(item);
+        assertEquals(1,itemRepository.findAll().size());
+    }
 }
 

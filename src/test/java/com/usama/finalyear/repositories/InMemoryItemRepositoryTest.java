@@ -55,7 +55,7 @@ public class InMemoryItemRepositoryTest {
     }
 
     @Test
-    @Ignore
+
     public void sameItemShouldNotSaveTwice(){
         Item item = new Item();
         InMemoryitemRepository itemRepository = new InMemoryitemRepository();

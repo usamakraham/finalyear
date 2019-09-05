@@ -2,11 +2,14 @@ package com.usama.finalyear.repositories;
 
 import com.usama.finalyear.domain.Item;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class InMemoryItemRepositoryTest {
 
@@ -63,5 +66,24 @@ public class InMemoryItemRepositoryTest {
         itemRepository.save(item);
         assertEquals(1,itemRepository.findAll().size());
     }
+    @Test
+    @Disabled
+    public void itemFindById(){
+        Item item = new Item( "Abc");
+        Item item1 = new Item("acc2");
+        item.setId(10);
+        item1.setId(20);
+        InMemoryitemRepository itemRepository = new InMemoryitemRepository();
+        itemRepository.save(item1);
+        itemRepository.save(item1);
+      //  item.getItemName();
+        Optional<Item> optionalItem = itemRepository.findById(10);
+        assertTrue(optionalItem.isPresent());
+        Item itemFromDb = optionalItem.get();
+        assertEquals("Abc",itemFromDb.getItemName());
+    }
+
+    //todo save one item, findbyid with id 10, assertFalse(optionalItem.isPresent)
+
 }
 

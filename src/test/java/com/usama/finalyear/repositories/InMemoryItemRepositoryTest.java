@@ -1,16 +1,16 @@
 package com.usama.finalyear.repositories;
 
 import com.usama.finalyear.domain.Item;
-import org.junit.After;
-import org.junit.Ignore;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class InMemoryItemRepositoryTest {
 
-    @After
+    @AfterEach
     public void resetStatic(){
         InMemoryitemRepository.n=1;
     }

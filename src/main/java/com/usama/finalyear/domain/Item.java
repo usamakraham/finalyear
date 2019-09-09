@@ -7,15 +7,17 @@ public class Item {
     private Rack rack;
     private Company company;
     private long id;
-    
+    private boolean deleted;
 
     private String name;
-    public Item(){
+
+    public Item() {
 
     }
 
+
     public Item(String name) {
-       this.name = name;
+        this.name = name;
 
     }
 
@@ -27,7 +29,7 @@ public class Item {
         this.id = id;
     }
 
-    public String getItemName(){
+    public String getItemName() {
         return this.name;
     }
 
@@ -51,8 +53,7 @@ public class Item {
         return price;
     }
 
-    public void setPrice(Price price)
-    {
+    public void setPrice(Price price) {
         this.price = price;
 
     }
@@ -64,14 +65,24 @@ public class Item {
     public void setRack(Rack rack) {
         this.rack = rack;
     }
-    public Company getCompanyName () {
-          return company;
+
+    public Company getCompanyName() {
+        return company;
 
     }
-    public void setCompany(Company company)
 
-    {
-        this.company=company;
+    public void setCompany(Company company) {
+        this.company = company;
 
     }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setdeleted(boolean deleted) {
+        this.deleted = deleted;
+
+    }
+
 }

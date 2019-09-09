@@ -8,4 +8,6 @@ public interface ItemRepositories {
     Item save(Item Item);
     List<Item> findAll();
     Optional<Item> findById(long id);
+    boolean deletepermanently(long id);
+    boolean delete(long id);
 }

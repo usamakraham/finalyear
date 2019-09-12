@@ -7,10 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class InMemoryitemRepository implements ItemRepositories {
-    static int n = 1;
+public class InMemoryitemRepository implements ItemRepository {
+    private static int n = 1;
+    private static List<Item> list = new ArrayList<Item>();
 
-    private List<Item> list = new ArrayList<Item>();
+    static void testRest(){
+      n = 1;
+      list = new ArrayList<>();
+    }
 
     public Item save(Item item) {
 
@@ -38,6 +42,8 @@ public class InMemoryitemRepository implements ItemRepositories {
     }
 
     public Optional<Item> findById(long id) {
+
+
         for (int i = 0; i < list.size(); i++) {
             Item item = list.get(i);
             if (id == item.getId()) //item.getId());

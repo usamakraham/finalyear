@@ -1,11 +1,13 @@
 package com.usama.finalyear.repositories;
 
 import com.usama.finalyear.domain.Item;
+//import com.usama.finalyear.services.InMemoryInventory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
+import java.util.InvalidPropertiesFormatException;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,7 +17,7 @@ public class InMemoryItemRepositoryTest {
 
     @AfterEach
     public void resetStatic(){
-        InMemoryitemRepository.n=1;
+        InMemoryitemRepository.testRest();
     }
 
     @Test
@@ -167,6 +169,11 @@ public class InMemoryItemRepositoryTest {
         itemRepository.delete(45);
         Optional<Item>optionalItem= itemRepository.findById(45);
         assertFalse(optionalItem.isPresent());
+
+
+
+
+
     }
 }
 
